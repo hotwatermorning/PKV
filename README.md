@@ -1,6 +1,6 @@
 # PKV generator and validator
 
-This project provides a key generator and a validator of PKV (Partial Key Verification).
+This project provides a key generator and a key validator of [PKV (Partial Key Verification)](http://www.brandonstaggs.com/2007/07/26/implementing-a-partial-serial-number-verification-system-in-delphi/).
 
 ## How to use.
 
@@ -61,8 +61,22 @@ for(auto const & key: keys) {
 
 ## Build example apps
 
+Windows:
 ```cpp
-cd /path/to/PKV
+cd C:¥path¥to¥develo¥PKV
+cmake -B build -G "Visual Studio 16 2019" .
+cmake --build build
+
+# run generator
+.¥build¥example¥generator¥Debug¥pkv-generator
+
+# run validator
+.¥build¥example¥generator¥Debug¥pkv-validator
+```
+
+macOS:
+```cpp
+cd /path/to/develop/PKV
 cmake -B build -G Xcode .
 cmake --build build
 
@@ -72,3 +86,7 @@ cmake --build build
 # run validator
 ./build/example/validator/Debug/pkv-validator
 ```
+
+## Acknowledgement
+
+This project is based on [juce_pkv_example](https://github.com/COx2/juce_pkv_example).
